@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Before copying the application code, create the logs and qr_codes directories
 # and ensure they are owned by the non-root user
-RUN mkdir tests app && chown jimbo:jimbo logs
+RUN mkdir tests app && chown jimbo:jimbo tests && chown jimbo:jimbo app
 
 # Copy the rest of the application's source code into the container, setting ownership to 'myuser'
 COPY --chown=jimbo:jimbo . .
